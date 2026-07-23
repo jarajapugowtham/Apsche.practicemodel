@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>APSCHE Practice Model</title>
+<script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI', sans-serif;}
+  body{background:#0f172a;color:#fff;}
+  .navbar{display:flex;justify-content:space-between;padding:15px 30px;background:#1e293b;}
+  .nav-links a{color:#fff;margin:0 10px;text-decoration:none;cursor:pointer;}
+  .btn{padding:10px 20px;background:#3b82f6;color:#fff;border:none;border-radius:8px;cursor:pointer;}
+  .btn:hover{background:#2563eb;}
+  .container{max-width:600px;margin:50px auto;padding:20px;background:#1e293b;border-radius:12px;}
+  input{width:100%;padding:12px;margin:10px 0;border-radius:8px;border:none;background:#334155;color:#fff;}
+  .msg{margin:10px 0;padding:10px;border-radius:8px;background:#334155;}
+  .option-btn{display:block;width:100%;padding:12px;margin:8px 0;background:#334155;color:#fff;border:none;border-radius:8px;cursor:pointer;text-align:left;}
+  .option-btn:hover{background:#475569;}
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script type="text/babel">
+const API_URL = "https://apsche-practicemodel.onrender.com";
+
+function App(){
+  const [page, setPage] = React.useState('home');
+  const [name, setName] = React.useState('');
+  const [email, setEmail] = React.useState('');
+  const [password, setPassword] = React.useState('');
+  const [msg, setMsg] = React.useState('');
+  const [question, setQuestion] = React.useState(null);
+
+  // NUV ICHINA CODE - WAKE UP + 5 SEC WAIT
+  const handleLogin = async () => {
+    setMsg('Loading... 10 sec wait chey');
+    await fetch(`${API_URL}/`); // wake up ping
+    await new Promise(r => setTimeout(r, 5000)); // 5 sec wait
+    
+    try {
+      const res = await fetch(`${API_URL}/login`, {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({email, password})
+      });
+      const data = await res.json();
+      if(res.ok){
+        setMsg('Login Success! ✅');
+        alert("Welcome " + data.name);
+        setPage('test');
+        fetchQuestion();
+      } else {
+        setMsg(data.message || 'Login Failed ❌');
+      }
+    } catch(err){
+      setMsg('Server Error. Malli try chey');
+    }
+  }
+
+  const handleRegister = async () => {
+    setMsg('Loading... 10 sec wait chey');
+    await fetch(`${API_URL}/`); // wake up ping
+    await new Promise(r => setTimeout(r, 5000)); // 5 sec wait
+    
+    try {
+      const res = await fetch(`${API_URL}/register`, {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({name, email, password})
+      });
+      const data = await res.json();
+      setMsg(res.ok ? 'Register Success! ✅ Now Login chey' : data.message);
+    } catch(err){
+      setMsg('Server Error. Malli try chey');
+    }
+  }
+
+  const fetchQuestion = async () => {
+    const res = await fetch(`${API_URL}/question`);
+    const data = await res.json();
+    setQuestion(data);
+  }
+
+  if(page === 'home') return(
+    <div>
+      <div className="navbar">
+        <h2>APSCHE</h2>
+        <div className="nav-links">
+          <a onClick={()=>setPage('login')}>Login</a>
+          <a onClick={()=>setPage('register')}>Register</a>
+        </div>
+      </div>
+      <div className="container">
+        <h1>Welcome to APSCHE Practice Model</h1>
+        <button className="btn" onClick={()=>setPage('register')}>Start Free Mock Test</button>
+      </div>
+    </div>
+  )
+
+  if(page === 'register') return(
+    <div className="container">
+      <h2>Register</h2>
+      <input placeholder="Name" onChange={e=>setName(e.target.value)}/>
+      <input placeholder="Email" onChange={e=>setEmail(e.target.value)}/>
+      <input type="password" placeholder="Password" onChange={e=>setPassword(e.target.value)}/>
+      <button className="btn" onClick={handleRegister}>Register</button>
+      <p className="msg">{msg}</p>
+      <a onClick={()=>setPage('login')}>Already have account? Login</a>
+    </div>
+  )
+
+  if(page === 'login') return(
+    <div className="container">
+      <h2>Login</h2>
+      <input placeholder="Email" onChange={e=>setEmail(e.target.value)}/>
+      <input type="password" placeholder="Password" onChange={e=>setPassword(e.target.value)}/>
+      <button className="btn" onClick={handleLogin}>Login</button>
+      <p className="msg">{msg}</p>
+      <a onClick={()=>setPage('register')}>New user? Register</a>
+    </div>
+  )
+
+  if(page === 'test') return(
+    <div className="container">
+      <h2>Mock Test</h2>
+      {question ? 
+        <div>
+          <h3>{question.q}</h3>
+          {question.options.map((opt,i)=><button key={i} className="option-btn">{opt}</button>)}
+        </div> 
+        : <p>Loading Question...</p>
+      }
+    </div>
+  )
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>)
+</script>
+</body>
+</html>
