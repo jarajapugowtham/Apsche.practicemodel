@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>APSCHE Practice Portal - Web Options Entry</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #061426;
+      --bg2: #0a1d39;
+      --header: #1e3a8a;
+      --header-dark: #1e40af;
+      --primary: #1d4ed8;
+      --primary-light: #3b82f6;
+      --accent: #10b981;
+      --warn: #f59e0b;
+      --danger: #ef4444;
+      --card: #ffffff;
+      --card-bg: #f8fafc;
+      --text: #1e293b;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+      --radius: 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', 'Noto Sans Devanagari', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      background: linear-gradient(160deg, var(--bg), var(--bg2));
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1200px, 92%);
+      margin: auto;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 18px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      border: none;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      color: #fff;
+      box-shadow: 0 8px 20px rgba(30, 78, 216, 0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(30, 78, 216, 0.4);
+    }
+
+    .btn-secondary {
+      background: #fff;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+    }
+
+    .btn-secondary:hover {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .btn-accent {
+      background: var(--accent);
+      color: #064e3b;
+      box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
+    }
+
+    .btn-accent:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(16, 185, 129, 0.4);
+    }
+
+    .btn-warn {
+      background: var(--warn);
+      color: #78350f;
+    }
+
+    .btn-danger {
+      background: var(--danger);
+      color: #fff;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .chip-green {
+      background: rgba(16, 185, 129, 0.15);
+      color: #065f46;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+
+    .chip-amber {
+      background: rgba(245, 158, 11, 0.15);
+      color: #92400e;
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+
+    .chip-red {
+      background: rgba(239, 68, 68, 0.15);
+      color: #991b1b;
+      border: 1px solid rgba(239, 68, 68, 0.3);
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, var(--header), var(--header-dark));
+      color: #fff;
+      padding: 14px 0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-mark {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #60a5fa, #3b82f6);
+      display: grid;
+      place-items: center;
+      font-size: 1.5rem;
+      font-weight: 800;
+      box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
+    }
+
+    .logo-text {
+      font-size: 1.2rem;
+      font-weight: 800;
+      letter-spacing: 0.3px;
+    }
+
+    .logo-sub {
+      font-size: 0.85rem;
+      opacity: 0.9;
+    }
+
+    .nav {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .nav a {
+      padding: 8px 14px;
+      border-radius: 10px;
+      color: rgba(255, 255, 255, 0.9);
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.2s ease;
+    }
+
+    .nav a:hover {
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+    }
+
+    /* Main */
+    main {
+      padding: 24px 0 40px;
+    }
+
+    .alert {
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(16, 185, 129, 0.08));
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      border-radius: var(--radius);
+      padding: 16px 18px;
+      margin-bottom: 20px;
+      display: flex;
+      gap: 12px;
+      align-items: start;
+    }
+
+    .alert-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: var(--accent);
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      color: #064e3b;
+      flex-shrink: 0;
+    }
+
+    .alert-title {
+      font-weight: 700;
+      font-size: 1.05rem;
+      margin-bottom: 4px;
+    }
+
+    .alert-text {
+      color: #065f46;
+      font-size: 0.95rem;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 20px;
+      align-items: start;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 24px;
+      border: 1px solid var(--border);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .card-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+    }
+
+    .form {
+      display: grid;
+      gap: 14px;
+    }
+
+    .field {
+      display: grid;
+      gap: 6px;
+    }
+
+    label {
+      font-weight: 600;
+      font-size: 0.92rem;
+      color: #334155;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--card-bg);
+      color: var(--text);
+      font-size: 0.95rem;
+      outline: none;
+      transition: all 0.2s ease;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+    }
+
+    .info-box {
+      background: linear-gradient(135deg, #dbeafe, #eff6ff);
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      border-radius: 12px;
+      padding: 16px;
+      margin-top: 12px;
+    }
+
+    .info-title {
+      font-weight: 700;
+      color: #1e40af;
+      margin-bottom: 6px;
+    }
+
+    .info-text {
+      color: #334155;
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+
+    /* Progress */
+    .progress {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .progress-step {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+      padding: 14px;
+      text-align: center;
+    }
+
+    .progress-step.active {
+      background: rgba(16, 185, 129, 0.2);
+      border-color: rgba(16, 185, 129, 0.4);
+    }
+
+    .progress-step .num {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #cbd5e1;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 8px;
+      font-weight: 800;
+      font-size: 0.95rem;
+    }
+
+    .progress-step.active .num {
+      background: var(--accent);
+      color: #064e3b;
+    }
+
+    .progress-step .label {
+      font-weight: 600;
+      font-size: 0.88rem;
+      color: #fff;
+    }
+
+    /* Table */
+    .table-wrap {
+      overflow-x: auto;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+    }
+
+    th {
+      background: linear-gradient(135deg, #f1f5f9, #f8fafc);
+      padding: 12px 14px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      text-align: left;
+      color: #475569;
+      border-bottom: 2px solid var(--border);
+    }
+
+    td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.92rem;
+    }
+
+    tr:hover {
+      background: #f8fafc;
+    }
+
+    /* Select card */
+    .select-card {
+      background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      border-radius: 14px;
+      padding: 18px;
+      margin-bottom: 14px;
+    }
+
+    .select-card h4 {
+      font-weight: 700;
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+    }
+
+    .select-card p {
+      color: #475569;
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+
+    /* Footer */
+    footer {
+      background: #0f172a;
+      color: #e2e8f0;
+      padding: 24px 0;
+      margin-top: 30px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 20px;
+      align-items: start;
+    }
+
+    .footer-title {
+      font-weight: 800;
+      font-size: 1.05rem;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    .footer p {
+      color: #94a3b8;
+      font-size: 0.92rem;
+      line-height: 1.7;
+    }
+
+    .footer ul {
+      list-style: none;
+    }
+
+    .footer li {
+      padding: 6px 0;
+      border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+    }
+
+    .copyright {
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: #94a3b8;
+      font-size: 0.88rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .progress {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .progress {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container header-content">
+      <div class="logo">
+        <div class="logo-mark">A</div>
+        <div>
+          <div class="logo-text">APSCHE Practice Portal</div>
+          <div class="logo-sub">Web Options Entry Simulation</div>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="#home">Home</a>
+        <a href="#steps">Steps</a>
+        <a href="#instructions">Instructions</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <button class="btn btn-secondary">Help Desk</button>
+    </div>
+  </header>
+
+  <main class="container" id="home">
+    <div class="alert">
+      <div class="alert-icon">✓</div>
+      <div>
+        <div class="alert-title">Portal is live for practice</div>
+        <div class="alert-text">
+          This is a 100% UI clone of the official APSCHE web options entry portal. Use it to practice and understand the process before the real counselling day.
+        </div>
+      </div>
+    </div>
+
+    <div class="progress" id="steps">
+      <div class="progress-step active">
+        <div class="num">1</div>
+        <div class="label">Login</div>
+      </div>
+      <div class="progress-step">
+        <div class="num">2</div>
+        <div class="label">Select Options</div>
+      </div>
+      <div class="progress-step">
+        <div class="num">3</div>
+        <div class="label">Review Order</div>
+      </div>
+      <div class="progress-step">
+        <div class="num">4</div>
+        <div class="label">Freeze</div>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Candidate Login</div>
+          <span class="chip chip-green">Secure</span>
+        </div>
+        <form class="form" id="loginForm">
+          <div class="row">
+            <div class="field">
+              <label>Hall Ticket Number</label>
+              <input type="text" placeholder="Enter hall ticket number" required />
+            </div>
+            <div class="field">
+              <label>Date of Birth</label>
+              <input type="date" required />
+            </div>
+          </div>
+          <div class="field">
+            <label>Mobile Number</label>
+            <input type="tel" placeholder="Enter mobile number" required />
+          </div>
+          <div class="field">
+            <label>Entrance Exam</label>
+            <select>
+              <option>AP EAPCET (Engineering)</option>
+              <option>AP EAPCET (Agriculture & Medical)</option>
+              <option>AP ECET</option>
+              <option>AP ICET</option>
+              <option>AP PGCET</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary">
+            <span>🔐</span> Login to Web Options
+          </button>
+          <div class="info-box">
+            <div class="info-title">Important</div>
+            <div class="info-text">
+              This is a practice portal only. No real data is stored. Use fake or test data to simulate the counselling process and build confidence.
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div>
+        <div class="card" id="instructions">
+          <div class="card-header">
+            <div class="card-title">How to Enter Web Options</div>
+            <span class="chip chip-amber">Guide</span>
+          </div>
+          <div class="form">
+            <div class="field">
+              <label>Step 1: Select Category</label>
+              <select id="category">
+                <option>General</option>
+                <option>SC</option>
+                <option>ST</option>
+                <option>BC-A</option>
+                <option>BC-B</option>
+                <option>BC-C</option>
+                <option>BC-D</option>
+                <option>BC-E</option>
+                <option>EWS</option>
+              </select>
+            </div>
+            <div class="field">
+              <label>Step 2: Select Stream</label>
+              <select id="stream">
+                <option>Engineering (EAPCET)</option>
+                <option>Agriculture & Medical (EAPCET)</option>
+              </select>
+            </div>
+            <div class="field">
+              <label>Step 3: Select Gender</label>
+              <select id="gender">
+                <option>Male</option>
+                <option>Female</option>
+                <option>Transgender</option>
+              </select>
+            </div>
+            <div class="field">
+              <label>Step 4: Select Region</label>
+              <select id="region">
+                <option>All India</option>
+                <option>Andhra Pradesh (AU)</option>
+                <option>Andhra Pradesh (JNTUK)</option>
+                <option>Andhra Pradesh (JNTUA)</option>
+                <option>Telangana</option>
+              </select>
+            </div>
+          </div>
+          <div class="select-card">
+            <h4>📚 Tips for Filling Options</h4>
+            <p>
+              Fill options in your genuine order of preference. Start with your dream college and branch, then add backup choices. Don't just copy others' lists—your career depends on your own smart choices.
+            </p>
+          </div>
+          <button class="btn btn-accent" onclick="showOptions()">
+            <span>📋</span> Show Available Colleges
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top: 20px;" id="options-section" hidden>
+      <div class="card-header">
+        <div class="card-title">Available Colleges & Branches</div>
+        <span class="chip chip-green">Editable</span>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Code</th>
+              <th>College Name</th>
+              <th>Branch</th>
+              <th>Seats</th>
+              <th>Fee (₹)</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="collegeTable">
+            <tr>
+              <td>A001</td>
+              <td>A.U. College of Engineering, Visakhapatnam</td>
+              <td>Computer Science & Engineering</td>
+              <td>120</td>
+              <td>13,640</td>
+              <td><button class="btn btn-primary btn-sm" onclick="addToOptions(this)">Add</button></td>
+            </tr>
+            <tr>
+              <td>A002</td>
+              <td>A.U. College of Engineering, Visakhapatnam</td>
+              <td>Electronics & Communication Engineering</td>
+              <td>120</td>
+              <td>13,640</td>
+              <td><button class="btn btn-primary btn-sm" onclick="addToOptions(this)">Add</button></td>
+            </tr>
+            <tr>
+              <td>A003</td>
+              <td>A.U. College of Engineering, Visakhapatnam</td>
+              <td>Electrical & Electronics Engineering</td>
+              <td>90</td>
+              <td>13,640</td>
+              <td><button class="btn btn-primary btn-sm" onclick="addToOptions(this)">Add</button></td>
+            </tr>
+            <tr>
+              <td>J004</td>
+              <td>JNTU College of Engineering, Anantapuram</td>
+              <td>Computer Science & Engineering</td>
+              <td>180</td>
+              <td>13,640</td>
+              <td><button class="btn btn-primary btn-sm" onclick="addToOptions(this)">Add</button></td>
+            </tr>
+            <tr>
+              <td>J005</td>
+              <td>JNTU College of Engineering, Anantapuram</td>
+              <td>Mechanical Engineering</td>
+              <td>120</td>
+              <td>13,640</td>
+              <td><button class="btn btn-primary btn-sm" onclick="addToOptions(this)">Add</button></td>
+            </tr>
+            <tr>
+              <td>V006</td>
+              <td>SVU College of Engineering, Tirupati</td>
+              <td>Computer Science & Engineering</td>
+              <td>120</td>
+              <td>13,640</td>
+              <td><button class="btn btn-primary btn-sm" onclick="addToOptions(this)">Add</button></td>
+            </tr>
+            <tr>
+              <td>V007</td>
+              <td>SVU College of Engineering, Tirupati</td>
+              <td>Civil Engineering</td>
+              <td>90</td>
+              <td>13,640</td>
+              <td><button class="btn btn-primary btn-sm" onclick="addToOptions(this)">Add</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="info-box" style="margin-top: 16px;">
+        <div class="info-title">💡 Pro Tip</div>
+        <div class="info-text">
+          Add as many safe options as possible after your top choices. This increases your chances of getting a seat even if your top options don't work out.
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top: 20px;" id="my-options-section" hidden>
+      <div class="card-header">
+        <div class="card-title">My Web Options (Priority Order)</div>
+        <span class="chip chip-red">Review Before Freezing</span>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Priority #</th>
+              <th>College Code</th>
+              <th>College Name</th>
+              <th>Branch</th>
+              <th>Move</th>
+              <th>Remove</th>
+            </tr>
+          </thead>
+          <tbody id="myOptionsTable">
+            <tr>
+              <td colspan="6" style="text-align: center; color: #64748b;">
+                No options added yet. Click "Add" on any college above to build your list.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="display: flex; gap: 12px; margin-top: 16px; flex-wrap: wrap;">
+        <button class="btn btn-primary" onclick="saveOptions()">
+          <span>💾</span> Save Options
+        </button>
+        <button class="btn btn-warn" onclick="resetOptions()">
+          <span>🔄</span> Reset All
+        </button>
+        <button class="btn btn-accent" onclick="freezeOptions()">
+          <span>🔒</span> Freeze Options
+        </button>
+      </div>
+      <div class="info-box" style="margin-top: 16px;">
+        <div class="info-title">⚠️ Important</div>
+        <div class="info-text">
+          Once you freeze your options, you cannot modify them. Make sure your priority order is correct before freezing.
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top: 20px;" id="faq">
+      <div class="card-header">
+        <div class="card-title">Frequently Asked Questions</div>
+        <span class="chip chip-amber">FAQ</span>
+      </div>
+      <details style="margin-bottom: 12px; padding: 14px; background: #f8fafc; border-radius: 12px; border: 1px solid var(--border);">
+        <summary style="font-weight: 700; cursor: pointer;">How do I practice on this portal?</summary>
+        <p style="margin-top: 10px; color: #475569; font-size: 0.92rem; line-height: 1.6;">
+          Enter any test hall ticket number and date of birth, fill your category and stream, then select colleges and branches to build your web options list. Practice as many times as you want.
+        </p>
+      </details>
+      <details style="margin-bottom: 12px; padding: 14px; background: #f8fafc; border-radius: 12px; border: 1px solid var(--border);">
+        <summary style="font-weight: 700; cursor: pointer;">Is this the official APSCHE website?</summary>
+        <p style="margin-top: 10px; color: #475569; font-size: 0.92rem; line-height: 1.6;">
+          No, this is a practice portal created to help students understand the web options process. The official website is apsc-oap.gov.in or eapcet-sche.aptonline.in.
+        </p>
+      </details>
+      <details style="margin-bottom: 12px; padding: 14px; background: #f8fafc; border-radius: 12px; border: 1px solid var(--border);">
+        <summary style="font-weight: 700; cursor: pointer;">Can I change my options after freezing?</summary>
+        <p style="margin-top: 10px; color: #475569; font-size: 0.92rem; line-height: 1.6;">
+          On the official portal, frozen options cannot be changed. This practice portal lets you reset and practice again, but remember: on the real day, freezing is final.
+        </p>
+      </details>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <div class="footer-title">APSCHE Practice Portal</div>
+        <p>
+          A realistic simulation of the APSCHE web options entry process, designed to help students practice and build confidence before the actual counselling.
+        </p>
+      </div>
+      <div>
+        <div class="footer-title">Quick Links</div>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#steps">Steps</a></li>
+          <li><a href="#instructions">Instructions</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-title">Disclaimer</div>
+        <p>
+          This is a practice portal for educational purposes only. Not affiliated with APSCHE or any government body. Use for learning and preparation only.
+        </p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="copyright">
+        <span>© 2026 APSCHE Practice Portal</span>
+        <span>Built to help students master web options entry</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    let myOptions = [];
+
+    function showOptions() {
+      document.getElementById('options-section').hidden = false;
+      document.getElementById('my-options-section').hidden = false;
+    }
+
+    function addToOptions(btn) {
+      const row = btn.closest('tr');
+      const code = row.cells[0].innerText;
+      const college = row.cells[1].innerText;
+      const branch = row.cells[2].innerText;
+      const seats = row.cells[3].innerText;
+      const fee = row.cells[4].innerText;
+
+      const exists = myOptions.find(opt => opt.code === code && opt.branch === branch);
+      if (exists) {
+        alert('This college and branch is already in your options list!');
+        return;
+      }
+
+      myOptions.push({ code, college, branch, seats, fee });
+      btn.innerText = '✓ Added';
+      btn.classList.remove('btn-primary');
+      btn.classList.add('btn-accent');
+      btn.disabled = true;
+
+      renderOptions();
+    }
+
+    function renderOptions() {
+      const tbody = document.getElementById('myOptionsTable');
+      tbody.innerHTML = '';
+
+      if (myOptions.length === 0) {
+        tbody.innerHTML = `
+          <tr>
+            <td colspan="6" style="text-align: center; color: #64748b;">
+              No options added yet. Click "Add" on any college above to build your list.
+            </td>
+          </tr>
+        `;
+        return;
+      }
+
+      myOptions.forEach((opt, idx) => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${idx + 1}</td>
+          <td>${opt.code}</td>
+          <td>${opt.college}</td>
+          <td>${opt.branch}</td>
+          <td>
+            <button class="btn btn-primary btn-sm" onclick="moveUp(${idx})">↑</button>
+            <button class="btn btn-primary btn-sm" onclick="moveDown(${idx})">↓</button>
+          </td>
+          <td>
+            <button class="btn btn-danger btn-sm" onclick="removeOption(${idx})">Remove</button>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function moveUp(idx) {
+      if (idx === 0) return;
+      [myOptions[idx - 1], myOptions[idx]] = [myOptions[idx], myOptions[idx - 1]];
+      renderOptions();
+    }
+
+    function moveDown(idx) {
+      if (idx === myOptions.length - 1) return;
+      [myOptions[idx], myOptions[idx + 1]] = [myOptions[idx + 1], myOptions[idx]];
+      renderOptions();
+    }
+
+    function removeOption(idx) {
+      myOptions.splice(idx, 1);
+      renderOptions();
+
+      // Re-enable the button in the main table
+      const allRows = document.querySelectorAll('#collegeTable tr');
+      allRows.forEach(row => {
+        const code = row.cells[0].innerText;
+        const branch = row.cells[2].innerText;
+        const btn = row.querySelector('button');
+        const exists = myOptions.find(opt => opt.code === code && opt.branch === branch);
+        if (!exists && btn) {
+          btn.innerText = 'Add';
+          btn.classList.remove('btn-accent');
+          btn.classList.add('btn-primary');
+          btn.disabled = false;
+        }
+      });
+    }
+
+    function saveOptions() {
+      if (myOptions.length === 0) {
+        alert('You have not added any options yet. Please add at least one college and branch.');
+        return;
+      }
+      alert('Your options have been saved! You can still modify or add more options before freezing.');
+    }
+
+    function resetOptions() {
+      if (myOptions.length === 0) return;
+      if (!confirm('Are you sure you want to reset all your options? This will clear your entire list.')) return;
+      myOptions = [];
+      renderOptions();
+
+      const allRows = document.querySelectorAll('#collegeTable tr');
+      allRows.forEach(row => {
+        const btn = row.querySelector('button');
+        if (btn) {
+          btn.innerText = 'Add';
+          btn.classList.remove('btn-accent');
+          btn.classList.add('btn-primary');
+          btn.disabled = false;
+        }
+      });
+    }
+
+    function freezeOptions() {
+      if (myOptions.length === 0) {
+        alert('You cannot freeze an empty options list. Please add at least one option first.');
+        return;
+      }
+      if (!confirm('Are you sure you want to freeze your options? Once frozen, you cannot modify them in the real portal.')) return;
+      alert('Your options have been frozen successfully! In the real portal, this would be final. Well done!');
+    }
+
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Login successful! You can now proceed to fill your web options.');
+      showOptions();
+    });
+  </script>
+</body>
+    </html>
