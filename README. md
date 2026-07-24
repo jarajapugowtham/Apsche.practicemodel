@@ -1,0 +1,52 @@
+# 📚 APSCHE Practice Portal
+
+A 100% original full-stack clone of APSCHE Web Options Entry Portal. 
+Built for practice and learning purposes using MERN stack. 
+Fully responsive and deployed on both GitHub Pages + Vercel.
+
+## 🌐 Live Demo
+
+- **Frontend - GitHub Pages**: [Click Here](https://jarajapugowtham.github.io/Apsche.practicemodel/)
+- **Frontend - Vercel**: [Click Here](https://apsche-practicemodel.vercel.app)
+- **Backend API - Render**: `https://apsche-practicemodel.onrender.com`
+
+## 🛠 Tech Stack
+
+**Frontend:**
+- HTML5
+- CSS3 
+- JavaScript
+- Deployed on: GitHub Pages, Vercel
+
+**Backend:**
+- Node.js
+- Express.js
+- CORS enabled for multiple origins
+- Deployed on: Render
+
+**Database:**
+- MongoDB + Mongoose [Ready to Connect]
+
+**Tools Used:**
+- Git & GitHub
+- VS Code
+- Postman for API testing
+- bcryptjs for password hashing
+
+## ✨ Features
+
+- **Pixel-perfect UI clone** of APSCHE portal
+- **Fully responsive** - works on mobile, tablet, desktop
+- **Full MERN Architecture** - Frontend + Backend + Database ready
+- **User Authentication** - Register & Login API endpoints
+- **Colleges API** - Fetch college data from backend
+- **CORS Configured** - Works with Vercel and GitHub Pages
+- **Form validation** and smooth interactions
+- **Practice web options entry flow**
+
+## 🚀 Setup Instructions
+
+### 1. Clone the repo
+```bash
+git clone https://github.com/jarajapugowtham/Apsche.practicemodel.git
+cd Apsche.practicemodel
