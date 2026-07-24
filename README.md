@@ -31,14 +31,14 @@ This project was built to demonstrate proficiency in the MERN stack, RESTful API
 | --- | --- | --- |
 | **Frontend - Vercel** | [apsche-practicemodel.vercel.app](https://apsche-practicemodel.vercel.app) | ✅ Live |
 | **Frontend - GitHub Pages** | [jarajapugowtham.github.io/Apsche.practicemodel](https://jarajapugowtham.github.io/Apsche.practicemodel/) | ✅ Live |
-| **Backend API - Render** | `https://apsche-practicemodel.onrender.com` | ✅ Live |
+| **Backend API - Render** | [https://apsche-practicemodel.onrender.com](https://apsche-practicemodel.onrender.com) | ✅ Live |
 
 ---
 
 ## 🛠 Built With
 
 **Frontend**
-- HTML5, CSS3, Vanilla JavaScript ES6
+- HTML5, CSS3, JavaScript ES6
 - Responsive Web Design
 
 **Backend**
