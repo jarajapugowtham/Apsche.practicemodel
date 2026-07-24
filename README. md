@@ -1,52 +1,54 @@
-# 📚 APSCHE Practice Portal
+<div align="center">
 
-A 100% original full-stack clone of APSCHE Web Options Entry Portal. 
-Built for practice and learning purposes using MERN stack. 
-Fully responsive and deployed on both GitHub Pages + Vercel.
+# 📚 APSCHE Practice Portal
+### Full-Stack MERN Clone for Web Options Entry
+
+![GitHub repo size](https://img.shields.io/github/repo-size/jarajapugowtham/Apsche.practicemodel)
+![GitHub last commit](https://img.shields.io/github/last-commit/jarajapugowtham/Apsche.practicemodel)
+![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black)
+![Render](https://img.shields.io/badge/API%20on-Render-46E3B7)
+
+A 100% original, responsive clone of APSCHE Web Options Portal built to master MERN stack.
+
+</div>
+
+---
 
 ## 🌐 Live Demo
+Check it out live 👇
 
-- **Frontend - GitHub Pages**: [Click Here](https://jarajapugowtham.github.io/Apsche.practicemodel/)
-- **Frontend - Vercel**: [Click Here](https://apsche-practicemodel.vercel.app)
+- **Frontend - GitHub Pages**: [jarajapugowtham.github.io/Apsche.practicemodel](https://jarajapugowtham.github.io/Apsche.practicemodel/)
+- **Frontend - Vercel**: [apsche-practicemodel.vercel.app](https://apsche-practicemodel.vercel.app)
 - **Backend API - Render**: `https://apsche-practicemodel.onrender.com`
+
+---
 
 ## 🛠 Tech Stack
 
-**Frontend:**
-- HTML5
-- CSS3 
-- JavaScript
-- Deployed on: GitHub Pages, Vercel
+**Frontend**  
+`HTML5` `CSS3` `JavaScript ES6` `Responsive Design`
 
-**Backend:**
-- Node.js
-- Express.js
-- CORS enabled for multiple origins
-- Deployed on: Render
+**Backend**  
+`Node.js` `Express.js` `REST API` `CORS`
 
-**Database:**
-- MongoDB + Mongoose [Ready to Connect]
+**Database**  
+`MongoDB` `Mongoose`
 
-**Tools Used:**
-- Git & GitHub
-- VS Code
-- Postman for API testing
-- bcryptjs for password hashing
+**Dev Tools**  
+`Git` `GitHub` `VS Code` `Postman` `bcryptjs`
 
-## ✨ Features
+---
 
-- **Pixel-perfect UI clone** of APSCHE portal
-- **Fully responsive** - works on mobile, tablet, desktop
-- **Full MERN Architecture** - Frontend + Backend + Database ready
-- **User Authentication** - Register & Login API endpoints
-- **Colleges API** - Fetch college data from backend
-- **CORS Configured** - Works with Vercel and GitHub Pages
-- **Form validation** and smooth interactions
-- **Practice web options entry flow**
+## ✨ Key Features
 
-## 🚀 Setup Instructions
+- 🔐 **JWT Ready Auth System** - Register & Login API with bcrypt hashing
+- 🏫 **Dynamic Colleges API** - Data served from backend
+- 📱 **100% Responsive** - Perfect on Mobile, Tablet, Desktop
+- 🚀 **Multi-Platform Deployment** - GitHub Pages + Vercel + Render
+- 🌍 **CORS Configured** - Secure cross-origin requests
+- ⚡ **Clean UI/UX** - Pixel perfect clone of APSCHE portal
+- 📝 **Form Validation** - Client + Server side validation
 
-### 1. Clone the repo
-```bash
-git clone https://github.com/jarajapugowtham/Apsche.practicemodel.git
-cd Apsche.practicemodel
+---
+
+## 📸 
