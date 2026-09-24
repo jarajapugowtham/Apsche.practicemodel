@@ -1,0 +1,1327 @@
+/* =========================================================
+   APSCHE COUNSELLING PORTAL
+   FINAL GLOBAL STYLES
+   Professional • Responsive • Mobile First
+========================================================= */
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f8fafc 0%,
+      #eef4ff 50%,
+      #f8fafc 100%
+    );
+
+  color: #172033;
+  line-height: 1.6;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+#root {
+  min-height: 100vh;
+}
+
+/* =========================================================
+   COMMON LAYOUT
+========================================================= */
+
+main {
+  width: 100%;
+  min-height: 100vh;
+}
+
+main > section,
+main > header,
+main > nav {
+  width: min(1180px, calc(100% - 32px));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* =========================================================
+   TYPOGRAPHY
+========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #111827;
+  line-height: 1.25;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+h2 {
+  font-size: clamp(1.45rem, 3vw, 2rem);
+  font-weight: 750;
+}
+
+h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+p {
+  color: #64748b;
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+button {
+  border: none;
+  border-radius: 10px;
+  padding: 11px 18px;
+
+  background: #2563eb;
+  color: white;
+
+  font-weight: 700;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+button:hover:not(:disabled) {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 8px 20px rgba(37, 99, 235, 0.2);
+}
+
+button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+input,
+select,
+textarea {
+  width: 100%;
+
+  padding: 12px 14px;
+
+  border: 1px solid #dbe2ea;
+  border-radius: 10px;
+
+  background: #ffffff;
+  color: #172033;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #94a3b8;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #2563eb;
+
+  box-shadow:
+    0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+label {
+  display: block;
+  margin-bottom: 7px;
+
+  color: #334155;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+/* =========================================================
+   LINKS
+========================================================= */
+
+a {
+  color: #2563eb;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #1d4ed8;
+}
+
+/* =========================================================
+   HOME PAGE
+========================================================= */
+
+main:has(> h1) {
+  padding: 70px 20px;
+  text-align: center;
+}
+
+main:has(> h1) > h1 {
+  margin-bottom: 14px;
+}
+
+main:has(> h1) > p {
+  max-width: 650px;
+  margin: 0 auto 30px;
+  font-size: 1.05rem;
+}
+
+main:has(> h1) > nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  flex-wrap: wrap;
+
+  padding: 20px;
+
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+
+  box-shadow:
+    0 15px 45px rgba(15, 23, 42, 0.08);
+}
+
+main:has(> h1) > nav a {
+  padding: 10px 15px;
+
+  border-radius: 9px;
+
+  background: #eff6ff;
+  color: #1d4ed8;
+
+  font-weight: 700;
+}
+
+/* =========================================================
+   LOGIN / REGISTER
+========================================================= */
+
+main:has(form) {
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 30px 16px;
+}
+
+main:has(form) section {
+  width: 100%;
+  max-width: 470px;
+
+  padding: 35px;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+
+  box-shadow:
+    0 25px 70px rgba(15, 23, 42, 0.1);
+}
+
+main:has(form) section > div > h1 {
+  font-size: 1.55rem;
+  letter-spacing: -0.02em;
+
+  color: #1d4ed8;
+}
+
+main:has(form) section > div > h1 + p {
+  margin-top: 4px;
+  margin-bottom: 28px;
+
+  font-size: 0.9rem;
+}
+
+main:has(form) section h2 {
+  margin-bottom: 7px;
+}
+
+main:has(form) section h2 + p {
+  margin-bottom: 22px;
+}
+
+main:has(form) form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+main:has(form) form > div {
+  width: 100%;
+}
+
+main:has(form) form button {
+  width: 100%;
+  margin-top: 4px;
+
+  padding: 13px;
+}
+
+main:has(form) form + p {
+  margin-top: 22px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+main:has(form) section a:last-child {
+  display: block;
+
+  margin-top: 20px;
+
+  text-align: center;
+
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+/* =========================================================
+   ALERTS
+========================================================= */
+
+[role="alert"],
+[role="status"] {
+  margin-bottom: 18px;
+
+  padding: 12px 14px;
+
+  border-radius: 10px;
+
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+[role="alert"] {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #b91c1c;
+}
+
+[role="status"] {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  color: #15803d;
+}
+
+/* =========================================================
+   DASHBOARD
+========================================================= */
+
+main > header {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding-top: 30px;
+  padding-bottom: 22px;
+
+  border-bottom: 1px solid #e2e8f0;
+}
+
+main > header h1 {
+  font-size: clamp(1.4rem, 4vw, 2rem);
+}
+
+main > header button {
+  flex-shrink: 0;
+}
+
+main > section {
+  margin-top: 22px;
+
+  padding: 25px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+
+  box-shadow:
+    0 8px 30px rgba(15, 23, 42, 0.04);
+}
+
+main > section h2 {
+  margin-bottom: 10px;
+}
+
+main > section nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  margin-top: 15px;
+}
+
+main > section nav br {
+  display: none;
+}
+
+main > section nav a {
+  display: block;
+
+  padding: 13px 15px;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+
+  background: #f8fafc;
+
+  color: #1d4ed8;
+  font-weight: 700;
+
+  transition: all 0.2s ease;
+}
+
+main > section nav a:hover {
+  background: #eff6ff;
+  border-color: #bfdbfe;
+  transform: translateX(3px);
+}
+
+/* =========================================================
+   COLLEGE LIST PAGE
+========================================================= */
+
+.college-page,
+.colleges-page {
+  width: min(1180px, calc(100% - 32px));
+  margin: auto;
+  padding: 35px 0 60px;
+}
+
+.college-header,
+.colleges-header {
+  margin-bottom: 25px;
+}
+
+.college-header h1,
+.colleges-header h1 {
+  margin-bottom: 8px;
+}
+
+.college-filters,
+.filters,
+.filter-bar {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 2fr)
+    minmax(180px, 1fr)
+    minmax(180px, 1fr);
+
+  gap: 12px;
+
+  margin-bottom: 25px;
+}
+
+.college-grid,
+.colleges-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+.college-card {
+  display: flex;
+  flex-direction: column;
+
+  padding: 20px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+
+  box-shadow:
+    0 8px 25px rgba(15, 23, 42, 0.05);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.college-card:hover {
+  transform: translateY(-3px);
+
+  border-color: #bfdbfe;
+
+  box-shadow:
+    0 15px 35px rgba(15, 23, 42, 0.09);
+}
+
+.college-card h2,
+.college-card h3 {
+  margin-bottom: 8px;
+}
+
+.college-card p {
+  margin-bottom: 7px;
+  font-size: 0.9rem;
+}
+
+.college-card a {
+  margin-top: auto;
+  padding-top: 15px;
+
+  font-weight: 700;
+}
+
+/* =========================================================
+   COLLEGE DETAILS
+========================================================= */
+
+.college-details,
+.college-detail-page {
+  width: min(1180px, calc(100% - 32px));
+  margin: auto;
+  padding: 35px 0 60px;
+}
+
+.college-hero {
+  padding: 30px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #eff6ff,
+      #ffffff
+    );
+
+  border: 1px solid #dbeafe;
+  border-radius: 20px;
+
+  margin-bottom: 20px;
+}
+
+.college-hero h1 {
+  margin-bottom: 8px;
+}
+
+.college-info-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 16px;
+}
+
+.info-card {
+  padding: 20px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 15px;
+}
+
+.info-card h3 {
+  margin-bottom: 8px;
+}
+
+/* =========================================================
+   COUNSELLING PAGE
+========================================================= */
+
+.counselling-page {
+  width: min(1150px, calc(100% - 32px));
+  margin: auto;
+
+  padding: 30px 0 70px;
+}
+
+.counselling-page h1 {
+  margin-bottom: 8px;
+}
+
+.counselling-page > p {
+  margin-bottom: 25px;
+}
+
+/* =========================================================
+   APPLICATION HEADER
+========================================================= */
+
+.application-header,
+.counselling-header {
+  display: flex;
+
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 24px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+
+  box-shadow:
+    0 8px 25px rgba(15, 23, 42, 0.05);
+}
+
+.application-status,
+.status-badge {
+  display: inline-flex;
+
+  align-items: center;
+
+  padding: 7px 11px;
+
+  border-radius: 999px;
+
+  background: #eff6ff;
+  color: #1d4ed8;
+
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+.progress,
+.progress-container,
+.steps {
+  display: grid;
+
+  grid-template-columns:
+    repeat(6, minmax(0, 1fr));
+
+  gap: 8px;
+
+  margin: 20px 0;
+}
+
+.progress-step,
+.step {
+  min-height: 65px;
+
+  padding: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  background: #f8fafc;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+
+  color: #64748b;
+
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.progress-step.active,
+.progress-step.completed,
+.step.active,
+.step.completed {
+  background: #eff6ff;
+
+  border-color: #93c5fd;
+
+  color: #1d4ed8;
+}
+
+/* =========================================================
+   COUNSELLING CARDS
+========================================================= */
+
+.counselling-card,
+.application-card,
+.form-card,
+.section-card {
+  margin-top: 18px;
+
+  padding: 25px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+
+  box-shadow:
+    0 8px 25px rgba(15, 23, 42, 0.04);
+}
+
+.counselling-card h2,
+.application-card h2,
+.form-card h2,
+.section-card h2 {
+  margin-bottom: 18px;
+}
+
+/* =========================================================
+   FORM GRID
+========================================================= */
+
+.form-grid,
+.student-form,
+.details-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 17px;
+}
+
+.form-group,
+.field,
+.form-field {
+  min-width: 0;
+}
+
+.form-group.full,
+.field.full,
+.form-field.full {
+  grid-column: 1 / -1;
+}
+
+/* =========================================================
+   ACTION ROW
+========================================================= */
+
+.action-row,
+.form-actions,
+.button-row {
+  display: flex;
+
+  align-items: center;
+  justify-content: flex-end;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  margin-top: 20px;
+}
+
+.secondary-button,
+button.secondary {
+  background: #f1f5f9;
+  color: #334155;
+  border: 1px solid #dbe2ea;
+}
+
+.secondary-button:hover,
+button.secondary:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+  box-shadow: none;
+}
+
+/* =========================================================
+   COLLEGE SELECTOR
+========================================================= */
+
+.college-selector {
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap: 14px;
+
+  margin-top: 15px;
+}
+
+.college-selector > div {
+  min-width: 0;
+}
+
+/* =========================================================
+   PREFERENCE LIST
+========================================================= */
+
+.preference-list {
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+
+  margin-top: 18px;
+}
+
+.preference-item {
+  display: grid;
+
+  grid-template-columns:
+    45px
+    minmax(0, 1fr)
+    auto;
+
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 14px;
+
+  background: #f8fafc;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+}
+
+.preference-number {
+  width: 35px;
+  height: 35px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #2563eb;
+  color: #ffffff;
+
+  font-weight: 800;
+}
+
+.preference-item h3 {
+  margin-bottom: 3px;
+}
+
+.preference-item p {
+  font-size: 0.85rem;
+}
+
+.preference-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.preference-actions button {
+  padding: 8px 10px;
+}
+
+/* =========================================================
+   EMPTY / LOADING
+========================================================= */
+
+.loading,
+.empty-state,
+.no-results {
+  padding: 45px 20px;
+
+  text-align: center;
+
+  background: #ffffff;
+
+  border: 1px dashed #cbd5e1;
+  border-radius: 15px;
+
+  color: #64748b;
+}
+
+.loading p,
+.empty-state p,
+.no-results p {
+  margin-top: 8px;
+}
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+
+  background: #ffffff;
+}
+
+th,
+td {
+  padding: 13px 15px;
+
+  border-bottom: 1px solid #e2e8f0;
+
+  text-align: left;
+  white-space: nowrap;
+}
+
+th {
+  background: #f8fafc;
+
+  color: #334155;
+
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+td {
+  color: #475569;
+  font-size: 0.9rem;
+}
+
+/* =========================================================
+   ADMIN
+========================================================= */
+
+.admin-dashboard {
+  width: min(1200px, calc(100% - 32px));
+  margin: auto;
+
+  padding: 35px 0 60px;
+}
+
+.admin-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 15px;
+}
+
+.admin-stat {
+  padding: 20px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+}
+
+.admin-stat strong {
+  display: block;
+
+  margin-top: 5px;
+
+  color: #111827;
+  font-size: 1.8rem;
+}
+
+/* =========================================================
+   BADGES
+========================================================= */
+
+.badge {
+  display: inline-flex;
+
+  align-items: center;
+
+  padding: 5px 9px;
+
+  border-radius: 999px;
+
+  background: #f1f5f9;
+  color: #475569;
+
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+.badge.success {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.badge.warning {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.badge.danger {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* =========================================================
+   DIVIDERS
+========================================================= */
+
+hr {
+  border: none;
+
+  height: 1px;
+
+  background: #e2e8f0;
+
+  margin: 22px 0;
+}
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* =========================================================
+   FOCUS ACCESSIBILITY
+========================================================= */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, 0.25);
+  outline-offset: 2px;
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 900px) {
+  .college-grid,
+  .colleges-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .college-info-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .admin-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .progress,
+  .progress-container,
+  .steps {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+
+  .college-filters,
+  .filters,
+  .filter-bar {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .college-filters input,
+  .filters input,
+  .filter-bar input {
+    grid-column: 1 / -1;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 640px) {
+  body {
+    font-size: 15px;
+  }
+
+  main > section,
+  main > header {
+    width: min(100% - 22px, 1180px);
+  }
+
+  main:has(> h1) {
+    padding: 40px 11px;
+  }
+
+  main:has(> h1) > nav {
+    flex-direction: column;
+  }
+
+  main:has(> h1) > nav a {
+    width: 100%;
+  }
+
+  main:has(form) {
+    padding: 15px 11px;
+  }
+
+  main:has(form) section {
+    padding: 24px 18px;
+    border-radius: 16px;
+  }
+
+  main > header {
+    padding-top: 20px;
+    padding-bottom: 17px;
+
+    align-items: flex-start;
+  }
+
+  main > header h1 {
+    font-size: 1.3rem;
+  }
+
+  main > header button {
+    padding: 9px 12px;
+  }
+
+  main > section {
+    padding: 19px;
+    border-radius: 13px;
+  }
+
+  .college-page,
+  .colleges-page,
+  .college-details,
+  .college-detail-page,
+  .counselling-page,
+  .admin-dashboard {
+    width: min(100% - 22px, 1180px);
+    padding-top: 22px;
+    padding-bottom: 45px;
+  }
+
+  .college-grid,
+  .colleges-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .college-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .college-filters,
+  .filters,
+  .filter-bar {
+    grid-template-columns: 1fr;
+  }
+
+  .college-filters input,
+  .filters input,
+  .filter-bar input {
+    grid-column: auto;
+  }
+
+  .form-grid,
+  .student-form,
+  .details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-group.full,
+  .field.full,
+  .form-field.full {
+    grid-column: auto;
+  }
+
+  .college-selector {
+    grid-template-columns: 1fr;
+  }
+
+  .application-header,
+  .counselling-header {
+    flex-direction: column;
+    padding: 19px;
+  }
+
+  .progress,
+  .progress-container,
+  .steps {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .progress-step,
+  .step {
+    min-height: 55px;
+  }
+
+  .counselling-card,
+  .application-card,
+  .form-card,
+  .section-card {
+    padding: 19px;
+  }
+
+  .action-row,
+  .form-actions,
+  .button-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .action-row button,
+  .form-actions button,
+  .button-row button {
+    width: 100%;
+  }
+
+  .preference-item {
+    grid-template-columns:
+      38px
+      minmax(0, 1fr);
+  }
+
+  .preference-actions {
+    grid-column: 1 / -1;
+
+    justify-content: flex-end;
+  }
+
+  .preference-number {
+    width: 32px;
+    height: 32px;
+
+    font-size: 0.85rem;
+  }
+
+  .admin-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 390px) {
+  .admin-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .progress,
+  .progress-container,
+  .steps {
+    grid-template-columns: 1fr;
+  }
+
+  main:has(form) section {
+    padding: 20px 15px;
+  }
+
+  button {
+    padding: 10px 14px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+    animation: none !important;
+  }
+  }
