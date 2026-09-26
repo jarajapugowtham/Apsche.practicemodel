@@ -1,0 +1,23 @@
+[
+  {
+    "collegeCode": "",
+    "name": "",
+    "shortName": "",
+    "district": "",
+    "city": "",
+    "region": "",
+    "type": "",
+    "status": "Active",
+    "verified": true,
+    "year": 2025,
+    "branches": [
+      {
+        "code": "",
+        "name": "",
+        "intake": 0,
+        "durationYears": 4,
+        "active": true
+      }
+    ]
+  }
+]
