@@ -1,0 +1,909 @@
+/* =========================================================
+APSCHE PORTAL — COUNSELLING PAGE
+Professional • Responsive • Mobile Friendly
+========================================================= */
+
+.counselling-page {
+min-height: 100vh;
+background: #f5f7fb;
+color: #172033;
+padding: 40px 20px 70px;
+font-family: Inter, "Segoe UI", Arial, sans-serif;
+}
+
+.counselling-container {
+width: min(1180px, 100%);
+margin: 0 auto;
+}
+
+/* =========================================================
+HEADER
+========================================================= */
+
+.counselling-header {
+display: flex;
+align-items: flex-start;
+justify-content: space-between;
+gap: 30px;
+margin-bottom: 26px;
+}
+
+.counselling-header .eyebrow {
+margin: 0 0 8px;
+color: #2563eb;
+font-size: 13px;
+font-weight: 800;
+letter-spacing: 1.4px;
+text-transform: uppercase;
+}
+
+.counselling-header h1 {
+margin: 0;
+color: #102a56;
+font-size: clamp(28px, 4vw, 42px);
+line-height: 1.15;
+font-weight: 800;
+}
+
+.counselling-header > div > p:last-child {
+max-width: 720px;
+margin: 12px 0 0;
+color: #667085;
+font-size: 15px;
+line-height: 1.7;
+}
+
+.counselling-header .back-link {
+display: inline-flex;
+align-items: center;
+gap: 7px;
+flex-shrink: 0;
+padding: 11px 17px;
+border: 1px solid #d9e1ee;
+border-radius: 10px;
+background: #ffffff;
+color: #244a7c;
+font-size: 14px;
+font-weight: 700;
+text-decoration: none;
+transition: 0.2s ease;
+}
+
+.counselling-header .back-link:hover {
+border-color: #2563eb;
+color: #2563eb;
+transform: translateY(-1px);
+}
+
+/* =========================================================
+APPLICATION BANNER
+========================================================= */
+
+.application-banner {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 1px;
+overflow: hidden;
+margin-bottom: 22px;
+border: 1px solid #dfe6f1;
+border-radius: 15px;
+background: #dfe6f1;
+box-shadow: 0 5px 18px rgba(20, 42, 75, 0.05);
+}
+
+.application-banner > div {
+min-height: 92px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+padding: 20px 24px;
+background: #ffffff;
+}
+
+.application-banner span {
+margin-bottom: 7px;
+color: #7b8798;
+font-size: 12px;
+font-weight: 700;
+text-transform: uppercase;
+letter-spacing: 0.5px;
+}
+
+.application-banner strong {
+color: #172b4d;
+font-size: 18px;
+}
+
+/* =========================================================
+ALERTS
+========================================================= */
+
+.counselling-alert {
+display: flex;
+align-items: center;
+gap: 11px;
+margin-bottom: 18px;
+padding: 14px 17px;
+border: 1px solid;
+border-radius: 11px;
+font-size: 14px;
+font-weight: 600;
+}
+
+.counselling-alert.error {
+border-color: #fecaca;
+background: #fff5f5;
+color: #b42318;
+}
+
+.counselling-alert.success {
+border-color: #b7ebc6;
+background: #f1fbf4;
+color: #18794e;
+}
+
+/* =========================================================
+STEPS
+========================================================= */
+
+.steps {
+display: grid;
+grid-template-columns: repeat(6, 1fr);
+gap: 10px;
+margin-bottom: 25px;
+padding: 15px;
+border: 1px solid #e1e7f0;
+border-radius: 15px;
+background: #ffffff;
+box-shadow: 0 5px 18px rgba(20, 42, 75, 0.04);
+}
+
+.step {
+position: relative;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 8px;
+min-width: 0;
+padding: 10px 5px;
+color: #98a2b3;
+font-size: 12px;
+font-weight: 700;
+text-align: center;
+}
+
+.step-number {
+width: 29px;
+height: 29px;
+flex: 0 0 29px;
+display: flex;
+align-items: center;
+justify-content: center;
+border: 1.5px solid #d5dce7;
+border-radius: 50%;
+background: #ffffff;
+color: #8a94a6;
+font-size: 12px;
+font-weight: 800;
+}
+
+.step.active {
+color: #174ea6;
+}
+
+.step.active .step-number {
+border-color: #2563eb;
+background: #2563eb;
+color: #ffffff;
+box-shadow: 0 3px 9px rgba(37, 99, 235, 0.2);
+}
+
+/* =========================================================
+COMMON CARD
+========================================================= */
+
+.counselling-card {
+margin-bottom: 22px;
+padding: 27px;
+border: 1px solid #dfe6f0;
+border-radius: 16px;
+background: #ffffff;
+box-shadow: 0 7px 24px rgba(20, 42, 75, 0.05);
+}
+
+.card-heading {
+display: flex;
+align-items: flex-start;
+gap: 13px;
+margin-bottom: 25px;
+}
+
+.heading-icon {
+width: 42px;
+height: 42px;
+flex: 0 0 42px;
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: 11px;
+background: #edf4ff;
+color: #2563eb;
+}
+
+.card-heading h2 {
+margin: 1px 0 5px;
+color: #172b4d;
+font-size: 21px;
+font-weight: 800;
+}
+
+.card-heading p {
+margin: 0;
+color: #7a8495;
+font-size: 13px;
+line-height: 1.5;
+}
+
+/* =========================================================
+FORM
+========================================================= */
+
+.form-grid {
+display: grid;
+grid-template-columns: repeat(2, minmax(0, 1fr));
+gap: 19px;
+}
+
+.form-grid label,
+.selection-grid label {
+display: flex;
+flex-direction: column;
+gap: 8px;
+color: #344054;
+font-size: 13px;
+font-weight: 700;
+}
+
+.form-grid input,
+.form-grid select,
+.selection-grid input,
+.selection-grid select {
+width: 100%;
+min-height: 45px;
+box-sizing: border-box;
+border: 1px solid #d7deea;
+border-radius: 9px;
+outline: none;
+background: #ffffff;
+color: #1d2939;
+padding: 11px 13px;
+font-family: inherit;
+font-size: 14px;
+transition: 0.2s ease;
+}
+
+.form-grid input:focus,
+.form-grid select:focus,
+.selection-grid input:focus,
+.selection-grid select:focus {
+border-color: #2563eb;
+box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.09);
+}
+
+.form-grid input:disabled,
+.form-grid select:disabled {
+background: #f7f9fc;
+color: #7b8493;
+cursor: not-allowed;
+}
+
+/* =========================================================
+SEARCH BOX
+========================================================= */
+
+.counselling-card > .search-box,
+.selection-grid + .search-box,
+.search-box {
+display: flex;
+align-items: center;
+gap: 10px;
+min-height: 47px;
+box-sizing: border-box;
+border: 1px solid #d7deea;
+border-radius: 10px;
+background: #ffffff;
+padding: 0 13px;
+color: #7a8699;
+}
+
+.counselling-card > .search-box {
+margin-bottom: 20px;
+}
+
+.search-box:focus-within {
+border-color: #2563eb;
+box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+.search-box input {
+flex: 1;
+min-width: 0;
+border: 0 !important;
+outline: 0 !important;
+box-shadow: none !important;
+background: transparent !important;
+padding: 0;
+color: #172033;
+}
+
+/* =========================================================
+SELECTION
+========================================================= */
+
+.selection-grid {
+display: grid;
+grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto;
+align-items: end;
+gap: 16px;
+}
+
+.selection-grid label {
+min-width: 0;
+}
+
+.selection-grid select:disabled {
+background: #f5f7fa;
+cursor: not-allowed;
+}
+
+/* =========================================================
+BUTTONS
+========================================================= */
+
+.primary-button,
+.secondary-button,
+.add-button,
+.warning-button {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+gap: 8px;
+min-height: 44px;
+border: 0;
+border-radius: 9px;
+padding: 10px 18px;
+font-family: inherit;
+font-size: 13px;
+font-weight: 750;
+cursor: pointer;
+transition: 0.2s ease;
+}
+
+.primary-button {
+background: #2563eb;
+color: #ffffff;
+box-shadow: 0 4px 12px rgba(37, 99, 235, 0.16);
+}
+
+.primary-button:hover {
+background: #1d4ed8;
+transform: translateY(-1px);
+}
+
+.secondary-button {
+border: 1px solid #cbd7e8;
+background: #ffffff;
+color: #24508c;
+}
+
+.secondary-button:hover {
+border-color: #2563eb;
+color: #2563eb;
+}
+
+.add-button {
+background: #174ea6;
+color: #ffffff;
+white-space: nowrap;
+}
+
+.add-button:hover {
+background: #123e86;
+transform: translateY(-1px);
+}
+
+.warning-button {
+background: #d97706;
+color: #ffffff;
+}
+
+.warning-button:hover {
+background: #b85f03;
+transform: translateY(-1px);
+}
+
+.primary-button:disabled,
+.secondary-button:disabled,
+.add-button:disabled,
+.warning-button:disabled {
+opacity: 0.55;
+cursor: not-allowed;
+transform: none;
+}
+
+/* =========================================================
+CARD ACTIONS
+========================================================= */
+
+.card-actions {
+display: flex;
+justify-content: flex-end;
+margin-top: 23px;
+padding-top: 20px;
+border-top: 1px solid #edf0f5;
+}
+
+/* =========================================================
+EMPTY PREFERENCES
+========================================================= */
+
+.empty-preferences {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+min-height: 210px;
+border: 1px dashed #ccd6e5;
+border-radius: 12px;
+background: #fafbfd;
+color: #98a2b3;
+text-align: center;
+}
+
+.empty-preferences svg {
+margin-bottom: 9px;
+color: #8ca0bd;
+}
+
+.empty-preferences h3 {
+margin: 0 0 5px;
+color: #475467;
+font-size: 16px;
+}
+
+.empty-preferences p {
+max-width: 400px;
+margin: 0;
+color: #98a2b3;
+font-size: 13px;
+}
+
+/* =========================================================
+PREFERENCES
+========================================================= */
+
+.preference-list {
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
+
+.preference-item {
+display: flex;
+align-items: center;
+gap: 15px;
+min-width: 0;
+padding: 15px;
+border: 1px solid #e0e6ef;
+border-radius: 11px;
+background: #fbfcfe;
+transition: 0.2s ease;
+}
+
+.preference-item:hover {
+border-color: #c8d6eb;
+background: #ffffff;
+}
+
+.priority {
+width: 35px;
+height: 35px;
+flex: 0 0 35px;
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: 9px;
+background: #edf4ff;
+color: #2458a6;
+font-size: 14px;
+font-weight: 800;
+}
+
+.preference-info {
+display: flex;
+flex-direction: column;
+gap: 4px;
+min-width: 0;
+flex: 1;
+}
+
+.preference-info strong {
+overflow: hidden;
+color: #172b4d;
+font-size: 14px;
+text-overflow: ellipsis;
+white-space: nowrap;
+}
+
+.preference-info span {
+overflow: hidden;
+color: #7a8495;
+font-size: 12px;
+text-overflow: ellipsis;
+white-space: nowrap;
+}
+
+.preference-actions {
+display: flex;
+align-items: center;
+gap: 5px;
+}
+
+.preference-actions button {
+width: 34px;
+height: 34px;
+display: flex;
+align-items: center;
+justify-content: center;
+border: 1px solid #dbe2ec;
+border-radius: 8px;
+background: #ffffff;
+color: #526173;
+cursor: pointer;
+transition: 0.2s ease;
+}
+
+.preference-actions button:hover:not(:disabled) {
+border-color: #2563eb;
+color: #2563eb;
+}
+
+.preference-actions button:last-child:hover:not(:disabled) {
+border-color: #ef4444;
+color: #dc2626;
+}
+
+.preference-actions button:disabled {
+opacity: 0.35;
+cursor: not-allowed;
+}
+
+/* =========================================================
+ACTION CARDS
+========================================================= */
+
+.action-card {
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 25px;
+margin-bottom: 22px;
+padding: 22px 25px;
+border: 1px solid #e3e7ee;
+border-radius: 15px;
+background: #ffffff;
+box-shadow: 0 6px 20px rgba(20, 42, 75, 0.04);
+}
+
+.action-card > div {
+display: flex;
+align-items: center;
+gap: 14px;
+}
+
+.action-icon {
+width: 43px;
+height: 43px;
+flex: 0 0 43px;
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: 11px;
+background: #fff4df;
+color: #c46b00;
+}
+
+.action-card h2 {
+margin: 0 0 5px;
+color: #243b5b;
+font-size: 17px;
+}
+
+.action-card p {
+margin: 0;
+color: #7b8492;
+font-size: 13px;
+line-height: 1.5;
+}
+
+.submit-card {
+border-color: #cfe0fa;
+background: #fafdff;
+}
+
+.submit-card .action-icon {
+background: #edf4ff;
+color: #2563eb;
+}
+
+/* =========================================================
+COMPLETED
+========================================================= */
+
+.completed-card {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+margin-bottom: 22px;
+padding: 50px 25px;
+border: 1px solid #b9e4c6;
+border-radius: 17px;
+background: #f5fcf7;
+text-align: center;
+}
+
+.completed-card > svg {
+color: #198754;
+margin-bottom: 13px;
+}
+
+.completed-card h2 {
+margin: 0 0 8px;
+color: #17663d;
+font-size: 25px;
+}
+
+.completed-card > p {
+max-width: 550px;
+margin: 0 0 22px;
+color: #64748b;
+font-size: 14px;
+line-height: 1.6;
+}
+
+.completed-card > div {
+display: flex;
+flex-direction: column;
+gap: 5px;
+margin-bottom: 23px;
+padding: 14px 24px;
+border: 1px solid #cce7d4;
+border-radius: 10px;
+background: #ffffff;
+}
+
+.completed-card > div span {
+color: #7a8492;
+font-size: 11px;
+font-weight: 700;
+text-transform: uppercase;
+}
+
+.completed-card > div strong {
+color: #17663d;
+font-size: 17px;
+letter-spacing: 0.4px;
+}
+
+/* =========================================================
+LOADING
+========================================================= */
+
+.counselling-loading {
+width: min(500px, 100%);
+margin: 90px auto;
+padding: 45px 25px;
+border: 1px solid #e0e6ef;
+border-radius: 16px;
+background: #ffffff;
+box-shadow: 0 8px 28px rgba(20, 42, 75, 0.05);
+text-align: center;
+}
+
+.counselling-loading svg {
+color: #2563eb;
+}
+
+.counselling-loading h2 {
+margin: 18px 0 7px;
+color: #203957;
+font-size: 22px;
+}
+
+.counselling-loading p {
+margin: 0;
+color: #7b8493;
+font-size: 14px;
+}
+
+/* =========================================================
+SPINNER
+========================================================= */
+
+.spin {
+animation: counselling-spin 0.9s linear infinite;
+}
+
+@keyframes counselling-spin {
+to {
+transform: rotate(360deg);
+}
+}
+
+/* =========================================================
+TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+.steps {
+grid-template-columns: repeat(3, 1fr);
+}
+
+.selection-grid {
+grid-template-columns: 1fr 1fr;
+}
+
+.selection-grid .add-button {
+grid-column: 1 / -1;
+width: 100%;
+}
+}
+
+/* =========================================================
+MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+.counselling-page {
+padding: 22px 12px 45px;
+}
+
+.counselling-header {
+flex-direction: column;
+gap: 17px;
+}
+
+.counselling-header h1 {
+font-size: 28px;
+}
+
+.counselling-header .back-link {
+width: fit-content;
+}
+
+.application-banner {
+grid-template-columns: 1fr;
+gap: 1px;
+}
+
+.application-banner > div {
+min-height: auto;
+padding: 15px 17px;
+}
+
+.steps {
+grid-template-columns: repeat(2, 1fr);
+gap: 5px;
+padding: 10px;
+}
+
+.step {
+justify-content: flex-start;
+text-align: left;
+}
+
+.step span {
+font-size: 11px;
+}
+
+.counselling-card {
+padding: 19px 15px;
+border-radius: 13px;
+}
+
+.card-heading {
+margin-bottom: 20px;
+}
+
+.card-heading h2 {
+font-size: 18px;
+}
+
+.form-grid {
+grid-template-columns: 1fr;
+gap: 15px;
+}
+
+.selection-grid {
+grid-template-columns: 1fr;
+}
+
+.selection-grid .add-button {
+grid-column: auto;
+}
+
+.card-actions {
+justify-content: stretch;
+}
+
+.card-actions button {
+width: 100%;
+}
+
+.preference-item {
+align-items: flex-start;
+gap: 11px;
+padding: 12px;
+}
+
+.preference-actions {
+flex-direction: column;
+}
+
+.preference-actions button {
+width: 31px;
+height: 31px;
+}
+
+.action-card {
+align-items: stretch;
+flex-direction: column;
+padding: 18px;
+}
+
+.action-card > div {
+align-items: flex-start;
+}
+
+.action-card button {
+width: 100%;
+}
+
+.completed-card {
+padding: 38px 17px;
+}
+}
+
+/* =========================================================
+SMALL PHONES
+========================================================= */
+
+@media (max-width: 400px) {
+.counselling-page {
+padding-left: 9px;
+padding-right: 9px;
+}
+
+.steps {
+grid-template-columns: 1fr 1fr;
+}
+
+.step {
+padding: 8px 3px;
+}
+
+.step-number {
+width: 26px;
+height: 26px;
+flex-basis: 26px;
+}
+
+.preference-info strong {
+font-size: 13px;
+}
+
+.preference-info span {
+font-size: 11px;
+}
+}
