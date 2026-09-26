@@ -1,0 +1,121 @@
+[
+  {
+    "code": "CSE",
+    "name": "Computer Science and Engineering",
+    "category": "Engineering",
+    "active": true,
+    "year": 2025
+  },
+  {
+    "code": "ECE",
+    "name": "Electronics and Communication Engineering",
+    "category": "Engineering",
+    "active": true,
+    "year": 2025
+  },
+  {
+    "code": "EEE",
+    "name": "Electrical and Electronics Engineering",
+    "category": "Engineering",
+    "active": true,
+    "year": 2025
+  },
+  {
+    "code": "ME",
+    "name": "Mechanical Engineering",
+    "category": "Engineering",
+    "active": true,
+    "year": 2025
+  },
+  {
+    "code": "CE",
+    "name": "Civil Engineering",
+    "category": "Engineering",
+    "active": true,
+    "year": 2025
+  },
+  {
+    "code": "IT",
+    "name": "Information Technology",
+    "category": "Engineering",
+    "active": true,
+    "year": 2025
+  },
+  {
+    "code": "AI",
+    "name": "Artificial Intelligence",
+    "category": "Engineering",
+    "active": true,
+    "year": 2025
+  },
+  {
+    "code": "AIML",
+    "name": "Artificial Intelligence and Machine Learning",
+    "category": "Engineering",
+    "active": true,
+    "year": 2025
+  },
+  {
+    "code": "DS",
+    "name": "Data Science",
+    "category": "Engineering",
+    "active": true,
+    "year": 2025
+  },
+  {
+    "code": "CSM",
+    "name": "Computer Science and Engineering (Artificial Intelligence and Machine Learning)",
+    "category": "Engineering",
+    "active": true,
+    "year": 2025
+  },
+  {
+    "code": "CSC",
+    "name": "Computer Science and Engineering (Cyber Security)",
+    "category": "Engineering",
+    "active": true,
+    "year": 2025
+  },
+  {
+    "code": "CSBS",
+    "name": "Computer Science and Business Systems",
+    "category": "Engineering",
+    "active": true,
+    "year": 2025
+  },
+  {
+    "code": "AIDS",
+    "name": "Artificial Intelligence and Data Science",
+    "category": "Engineering",
+    "active": true,
+    "year": 2025
+  },
+  {
+    "code": "BIO",
+    "name": "Biotechnology",
+    "category": "Engineering",
+    "active": true,
+    "year": 2025
+  },
+  {
+    "code": "CHE",
+    "name": "Chemical Engineering",
+    "category": "Engineering",
+    "active": true,
+    "year": 2025
+  },
+  {
+    "code": "AG",
+    "name": "Agricultural Engineering",
+    "category": "Engineering",
+    "active": true,
+    "year": 2025
+  },
+  {
+    "code": "FST",
+    "name": "Food Science and Technology",
+    "category": "Engineering",
+    "active": true,
+    "year": 2025
+  }
+]
